@@ -4,11 +4,13 @@ class Personaje {
   edad;
   vivo = true;
   serie = "Juego de Tronos";
+  img;
 
-  constructor(nombrePersonaje, familiaPersonaje, edadPersonaje) {
+  constructor(nombrePersonaje, familiaPersonaje, edadPersonaje, img) {
     this.nombre = nombrePersonaje;
     this.familia = familiaPersonaje;
     this.edad = edadPersonaje;
+    this.img = img;
   }
 
   comunicar() {

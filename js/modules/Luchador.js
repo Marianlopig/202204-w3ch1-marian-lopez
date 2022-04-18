@@ -1,6 +1,5 @@
 import Personaje from "./Personaje.js";
 
-Personaje
 class Luchador extends Personaje {
   arma;
   destreza;
@@ -10,9 +9,10 @@ class Luchador extends Personaje {
     familiaLuchador,
     edadLuchador,
     armaLuchador,
-    valorDestreza
+    valorDestreza,
+    img,
   ) {
-    super(nombreLuchador, familiaLuchador, edadLuchador);
+    super(nombreLuchador, familiaLuchador, edadLuchador, img);
     this.arma = armaLuchador;
     this.destreza = this.filtraDestreza(valorDestreza);
   }

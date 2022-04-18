@@ -1,11 +1,11 @@
 import Personaje from "./Personaje.js";
 
-Personaje
+
 class Rey extends Personaje {
   anyosReinado;
 
-  constructor(nombreRey, familiaRey, edadRey, anyosReinadoRey) {
-    super(nombreRey, familiaRey, edadRey);
+  constructor(nombreRey, familiaRey, edadRey, anyosReinadoRey, img) {
+    super(nombreRey, familiaRey, edadRey, img);
     this.anyosReinado = anyosReinadoRey;
   }
 
