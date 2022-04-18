@@ -1,6 +1,6 @@
+import Luchador from "./Luchador.js";
 import Personaje from "./Personaje.js";
 
-Personaje
 
 class Escudero extends Personaje {
   sirveA;
@@ -11,9 +11,10 @@ class Escudero extends Personaje {
     familiaEscudero,
     edadEscudero,
     valorPelotismo,
-    personajeSirve
+    personajeSirve,
+    img
   ) {
-    super(nombreEscudero, familiaEscudero, edadEscudero);
+    super(nombreEscudero, familiaEscudero, edadEscudero, img);
     this.pelotismo = this.filtrarPelotismo(valorPelotismo);
     if (personajeSirve instanceof Luchador) {
       this.sirveA = personajeSirve;

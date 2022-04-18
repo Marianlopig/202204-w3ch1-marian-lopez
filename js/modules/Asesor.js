@@ -1,11 +1,10 @@
 import Personaje from "./Personaje.js";
 
-Personaje
 
 class Asesor extends Personaje {
   asesorado;
-  constructor(nombreAsesor, familiaAsesor, edadAsesor, personajeAsesorado) {
-    super(nombreAsesor, familiaAsesor, edadAsesor);
+  constructor(nombreAsesor, familiaAsesor, edadAsesor, personajeAsesorado, img) {
+    super(nombreAsesor, familiaAsesor, edadAsesor, img);
     if (personajeAsesorado instanceof Personaje) {
       this.asesorado = personajeAsesorado;
     }
@@ -15,4 +14,4 @@ class Asesor extends Personaje {
     return `${super.comunicar()}No sé por qué, pero creo que voy a morir pronto`;
   }
 }
-export default Personaje
+export default Asesor
