@@ -14,6 +14,9 @@ class Communication extends Component {
 
   show() {
     this.element.className = "comunications on";
+    setTimeout(() => {
+      this.element.className = "comunications";
+    }, 2000);
   }
 }
 export default Communication;
