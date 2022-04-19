@@ -80,8 +80,8 @@ body {
   left: -100vw;
 }
 .comunications.on {
-  right: 0;
-  left: 0;
+  right: 0vw;
+  left: 0vw;
   background-color: rgba(255, 255, 255, 1);
 }
 .comunications__picture {
