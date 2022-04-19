@@ -1,4 +1,4 @@
-import Component from "./Component.js";
+import Component from "./Component.js"
 
 class CardBody extends Component {
   constructor(parentElement) {
@@ -12,5 +12,6 @@ class CardBody extends Component {
 
   }
 }
+
 
 export default CardBody
