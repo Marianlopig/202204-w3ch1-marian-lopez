@@ -1,3 +1,7 @@
+import Asesor from "../modules/Asesor.js";
+import Escudero from "../modules/Escudero.js";
+import Luchador from "../modules/Luchador.js";
+import Rey from "../modules/Rey.js";
 import Component from "./Component.js";
 
 class Card extends Component {
@@ -10,25 +14,52 @@ class Card extends Component {
               class="character__picture card-img-top"
             />
             <div class="card-body">
-              <h2 class="character__name card-title h4">${character.nombre} ${character.familia}</h2>
+              <h2 class="character__name card-title h4">${character.nombre} ${
+      character.familia
+    }</h2>
               <div class="character__info">
                 <ul class="list-unstyled">
                   <li>Edad: ${character.edad} años</li>
                   <li>
                     Estado:
-                    <i class="fas fa-thumbs-down"></i>
-                    <i class="fas fa-thumbs-up"></i>
+                    <i class="fas fa-thumbs-${
+                      character.vivo ? "up" : "down"
+                    }"></i>
                   </li>
                 </ul>
               </div>
               <div class="character__overlay">
                 <ul class="list-unstyled">
-                  <li>Años de reinado: X</li>
-                  <li>Arma: XXX</li>
-                  <li>Destreza: X</li>
-                  <li>Peloteo: X</li>
-                  <li>Asesora a: X</li>
-                  <li>Sirve a: X</li>
+                  ${
+                    character instanceof Rey
+                      ? `<li>Años de reinado: ${character.anyosReinado} </li>`
+                      : ""
+                  }
+                   ${
+                     character instanceof Luchador
+                       ? `<li>Arma: ${character.arma} </li>`
+                       : ""
+                   }
+                   ${
+                     character instanceof Luchador
+                       ? `<li>Destreza: ${character.destreza} </li>`
+                       : ""
+                   } 
+                   ${
+                     character instanceof Escudero
+                       ? `<li>Peloteo: ${character.pelotismo} </li>`
+                       : ""
+                   }
+                   ${
+                     character instanceof Asesor
+                       ? `<li>Asesora a: ${character.asesorado.nombre} </li>`
+                       : ""
+                   }
+                    ${
+                      character instanceof Escudero
+                        ? `<li>Sirve a: ${character.sirveA.nombre} </li>`
+                        : ""
+                    }
                 </ul>
                 <div class="character__actions">
                   <button class="character__action btn">habla</button>
