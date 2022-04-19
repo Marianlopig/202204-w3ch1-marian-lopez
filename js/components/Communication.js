@@ -11,5 +11,9 @@ class Communication extends Component {
         alt="${character.nombre} ${character.familia}"
       />`;
   }
+
+  show() {
+    this.element.className = "comunications on";
+  }
 }
 export default Communication;

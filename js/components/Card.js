@@ -2,6 +2,8 @@ import Asesor from "../modules/Asesor.js";
 import Escudero from "../modules/Escudero.js";
 import Luchador from "../modules/Luchador.js";
 import Rey from "../modules/Rey.js";
+import Button from "./Button.js";
+import Communication from "./Communication.js";
 import Component from "./Component.js";
 
 class Card extends Component {
@@ -62,13 +64,36 @@ class Card extends Component {
                     }
                 </ul>
                 <div class="character__actions">
-                  <button class="character__action btn">habla</button>
-                  <button class="character__action btn">muere</button>
                 </div>
               </div>
             </div>
             <i class="emoji"></i>
           </div>`;
+
+    const characterActionsDiv = this.element.querySelector(
+      "div.character__actions"
+    );
+    const buttonHabla = new Button(
+      characterActionsDiv,
+      "character__action btn",
+      "habla",
+      () => {
+        const body = document.querySelector("body");
+        const communication = new Communication(body, character);
+        communication.show();
+      }
+    );
+    const buttonMuere = new Button(
+      characterActionsDiv,
+      "character__action btn",
+      "muere",
+      () => {
+        character.muere();
+        const thumbs = this.element.querySelector("i");
+        thumbs.className = "fas fa-thumbs-down";
+      }
+    );
   }
 }
+
 export default Card;
