@@ -11,8 +11,9 @@ class Luchador extends Personaje {
     armaLuchador,
     valorDestreza,
     img,
+    icon
   ) {
-    super(nombreLuchador, familiaLuchador, edadLuchador, img);
+    super(nombreLuchador, familiaLuchador, edadLuchador, img, icon);
     this.arma = armaLuchador;
     this.destreza = this.filtraDestreza(valorDestreza);
   }
@@ -20,15 +21,15 @@ class Luchador extends Personaje {
   filtraDestreza(valorDestreza) {
     if (valorDestreza < 0) {
       return 0;
-    } else if (valorDestreza > 10) {
-      return 10;
-    } else {
-      return valorDestreza;
     }
+    if (valorDestreza > 10) {
+      return 10;
+    }
+    return valorDestreza;
   }
 
   comunicar() {
     return `${super.comunicar()}Primero pego y luego pregunto`;
   }
 }
-export default Luchador
+export default Luchador;
